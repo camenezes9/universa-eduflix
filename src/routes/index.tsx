@@ -180,13 +180,14 @@ function Hero() {
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <Button asChild variant="cta" size="xl">
+            <Button asChild variant="cta" size="xl" className="led-border">
               <Link to="/cursos">Quero minha vaga com 50% OFF</Link>
             </Button>
-            <Button asChild variant="outlineLight" size="xl">
+            <Button asChild variant="outlineLight" size="xl" className="led-border">
               <Link to="/cursos">Conhecer cursos</Link>
             </Button>
           </div>
+
           <div className="mt-10 flex flex-wrap items-center gap-6 text-sm text-white/80">
             <div className="flex items-center gap-2">
               <div className="flex -space-x-2">
