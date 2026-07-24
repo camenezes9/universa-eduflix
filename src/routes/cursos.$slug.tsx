@@ -67,7 +67,14 @@ function NotFound() {
 function CourseDetail() {
   const { course } = Route.useLoaderData();
   const Icon = course.icon;
-  const related = courses.filter((c) => c.area === course.area && c.slug !== course.slug).slice(0, 4);
+  const suggestions = (upsells[course.slug] ?? [])
+    .map((u) => ({ ...u, course: getCourse(u.slug) }))
+    .filter((u): u is { slug: string; reason: string; course: NonNullable<ReturnType<typeof getCourse>> } => Boolean(u.course));
+  const related = courses
+    .filter(
+      (c) => c.area === course.area && c.slug !== course.slug && !suggestions.some((s) => s.slug === c.slug),
+    )
+    .slice(0, 4);
 
   return (
     <div className="min-h-screen bg-background">
