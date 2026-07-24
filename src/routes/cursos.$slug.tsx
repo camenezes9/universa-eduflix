@@ -1,5 +1,5 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { ArrowLeft, CheckCircle2, Clock, GraduationCap, Users, Award, Calendar } from "lucide-react";
+import { ArrowLeft, ArrowRight, CheckCircle2, Clock, GraduationCap, Users, Award, Calendar, Sparkles, TrendingUp } from "lucide-react";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import { WhatsAppFab } from "@/components/site/WhatsAppFab";
@@ -12,7 +12,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { courses, getCourse } from "@/lib/courses";
+import { courses, getCourse, upsells } from "@/lib/courses";
 
 export const Route = createFileRoute("/cursos/$slug")({
   loader: ({ params }) => {
