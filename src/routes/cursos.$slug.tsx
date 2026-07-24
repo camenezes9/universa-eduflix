@@ -1,5 +1,5 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { ArrowLeft, CheckCircle2, Clock, GraduationCap, Users, Award, Calendar } from "lucide-react";
+import { ArrowLeft, ArrowRight, CheckCircle2, Clock, GraduationCap, Users, Award, Calendar, Sparkles, TrendingUp } from "lucide-react";
 import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import { WhatsAppFab } from "@/components/site/WhatsAppFab";
@@ -12,7 +12,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { courses, getCourse } from "@/lib/courses";
+import { courses, getCourse, upsells } from "@/lib/courses";
 
 export const Route = createFileRoute("/cursos/$slug")({
   loader: ({ params }) => {
@@ -67,7 +67,14 @@ function NotFound() {
 function CourseDetail() {
   const { course } = Route.useLoaderData();
   const Icon = course.icon;
-  const related = courses.filter((c) => c.area === course.area && c.slug !== course.slug).slice(0, 4);
+  const suggestions = (upsells[course.slug] ?? [])
+    .map((u) => ({ ...u, course: getCourse(u.slug) }))
+    .filter((u): u is { slug: string; reason: string; course: NonNullable<ReturnType<typeof getCourse>> } => Boolean(u.course));
+  const related = courses
+    .filter(
+      (c) => c.area === course.area && c.slug !== course.slug && !suggestions.some((s) => s.slug === c.slug),
+    )
+    .slice(0, 4);
 
   return (
     <div className="min-h-screen bg-background">
@@ -201,9 +208,94 @@ function CourseDetail() {
           </aside>
         </section>
 
+        {suggestions.length > 0 && (
+          <section className="bg-gradient-to-b from-cream/40 to-background py-16">
+            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+              <div className="max-w-2xl">
+                <div className="inline-flex items-center gap-2 rounded-full bg-orange/10 px-3 py-1 text-xs font-bold uppercase tracking-wider text-orange">
+                  <TrendingUp className="size-3.5" /> Potencialize seu currículo
+                </div>
+                <h2 className="mt-4 font-display text-3xl font-extrabold text-navy sm:text-4xl">
+                  Vá além do {course.name}
+                </h2>
+                <p className="mt-3 text-foreground/75">
+                  Quem se destaca no mercado combina formações. Veja como estes cursos se somam ao seu
+                  para abrir mais portas, aumentar a renda e diferenciar seu trabalho.
+                </p>
+              </div>
+
+              <div className="mt-8 grid gap-6 md:grid-cols-2">
+                {suggestions.map(({ course: sc, reason }) => {
+                  const SIcon = sc.icon;
+                  return (
+                    <article
+                      key={sc.slug}
+                      className="group relative flex flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-soft transition hover:shadow-elevated sm:flex-row"
+                    >
+                      <div className="relative h-44 shrink-0 sm:h-auto sm:w-44">
+                        <img
+                          src={sc.image}
+                          alt={sc.name}
+                          loading="lazy"
+                          width={512}
+                          height={512}
+                          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-navy/50 to-transparent sm:bg-gradient-to-r sm:from-transparent sm:to-navy/10" />
+                      </div>
+                      <div className="flex flex-1 flex-col p-5">
+                        <div className="flex items-center gap-2">
+                          <div className="grid size-9 place-items-center rounded-lg bg-navy/5 text-navy">
+                            <SIcon className="size-4.5" strokeWidth={1.8} />
+                          </div>
+                          <div>
+                            <div className="text-[10px] font-bold uppercase tracking-wider text-orange">
+                              Combine com
+                            </div>
+                            <h3 className="font-display text-lg font-bold text-navy">{sc.name}</h3>
+                          </div>
+                        </div>
+                        <p className="mt-3 flex-1 text-sm text-foreground/75">
+                          <Sparkles className="mr-1.5 inline size-3.5 text-orange" />
+                          {reason}
+                        </p>
+                        <div className="mt-4 flex items-center justify-between border-t border-border pt-4">
+                          <div>
+                            <div className="text-[11px] text-muted-foreground">a partir de</div>
+                            <div className="font-display text-lg font-extrabold text-navy">
+                              R$ {sc.price}
+                              <span className="text-xs font-semibold text-muted-foreground">/mês</span>
+                            </div>
+                          </div>
+                          <Button asChild variant="outline" size="sm">
+                            <Link to="/cursos/$slug" params={{ slug: sc.slug }}>
+                              Conhecer <ArrowRight className="size-3.5" />
+                            </Link>
+                          </Button>
+                        </div>
+                      </div>
+                    </article>
+                  );
+                })}
+              </div>
+
+              <div className="mt-8 rounded-2xl border border-dashed border-orange/40 bg-orange/5 p-5 text-sm text-foreground/80 sm:flex sm:items-center sm:justify-between sm:gap-4">
+                <p>
+                  <strong className="text-navy">Alunos que combinam formações</strong> conseguem melhores
+                  vagas e ticket médio maior. Fale com um consultor sobre condições especiais para dois ou
+                  mais cursos.
+                </p>
+                <Button asChild variant="cta" size="sm" className="mt-3 shrink-0 sm:mt-0">
+                  <Link to="/agendar">Agendar visita</Link>
+                </Button>
+              </div>
+            </div>
+          </section>
+        )}
+
         {related.length > 0 && (
           <section className="mx-auto max-w-7xl px-4 pb-16 sm:px-6 lg:px-8">
-            <h2 className="font-display text-2xl font-extrabold text-navy">Cursos relacionados</h2>
+            <h2 className="font-display text-2xl font-extrabold text-navy">Outros cursos da mesma área</h2>
             <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
               {related.map((c) => (
                 <CourseCard key={c.slug} course={c} />
