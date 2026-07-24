@@ -78,8 +78,8 @@ export function Header() {
                 </Link>
               ))}
               <Button asChild variant="cta" className="mt-4">
-                <Link to="/cursos" onClick={() => setOpen(false)}>
-                  Matricule-se
+                <Link to="/agendar" onClick={() => setOpen(false)}>
+                  Agendar matrícula
                 </Link>
               </Button>
             </div>
