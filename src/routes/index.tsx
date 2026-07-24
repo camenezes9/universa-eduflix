@@ -775,6 +775,7 @@ function Home() {
         <Presencial />
         <EAD />
         <Testimonials />
+        <AlumniBusiness />
         <WhyUs />
         <Urgency />
         <Steps />
