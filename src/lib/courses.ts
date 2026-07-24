@@ -338,6 +338,105 @@ export const courses: Course[] = [
     audience: "Quem busca vagas em hospitais, clínicas e laboratórios.",
     nextClass: "Turmas semanais",
   },
+  {
+    slug: "informatica",
+    image: informaticaImg,
+    name: "Informática Essencial",
+    icon: Laptop,
+    modality: "EAD",
+    duration: "12 meses",
+    hours: "96h",
+    price: 69,
+    originalPrice: 138,
+    area: "Administração",
+    short: "Domine o computador, pacote Office e ferramentas do dia a dia profissional.",
+    description:
+      "Formação prática em informática do básico ao intermediário, com foco em empregabilidade e produtividade.",
+    learn: [
+      "Windows e organização de arquivos",
+      "Word, Excel e PowerPoint",
+      "Internet, e-mail e navegadores",
+      "Google Drive e ferramentas online",
+      "Segurança digital",
+    ],
+    audience: "Quem quer entrar no mercado ou ganhar autonomia no uso do computador.",
+    nextClass: "Turmas semanais",
+  },
 ];
+
+export type UpsellSuggestion = {
+  slug: string;
+  reason: string;
+};
+
+export const upsells: Record<string, UpsellSuggestion[]> = {
+  massoterapia: [
+    {
+      slug: "administracao",
+      reason:
+        "Como massoterapeuta você vira dono do próprio negócio. Saber administrar preços, agenda e fluxo de caixa é o que separa quem sobrevive de quem prospera.",
+    },
+    {
+      slug: "informatica",
+      reason:
+        "Agenda online, controle de clientes, emissão de nota e divulgação nas redes exigem domínio do computador. É o mínimo para uma clínica moderna.",
+    },
+  ],
+  "cuidador-de-idosos": [
+    {
+      slug: "massoterapia",
+      reason:
+        "Aplicar massagens terapêuticas no idoso alivia dores, melhora a circulação e faz de você o profissional de confiança de toda a família — não só do paciente.",
+    },
+    {
+      slug: "informatica",
+      reason:
+        "Casas de repouso e clínicas usam sistemas para prontuários e escalas. Quem domina informática costuma ser promovido a cargos de liderança.",
+    },
+  ],
+  "monitor-escolar": [
+    {
+      slug: "libras",
+      reason:
+        "Escolas priorizam monitores que promovem inclusão. Saber Libras te qualifica para acompanhar alunos surdos e amplia muito suas chances de contratação.",
+    },
+    {
+      slug: "informatica",
+      reason:
+        "Vagas no administrativo escolar (secretaria, coordenação) exigem informática. É a ponte para sair do apoio pedagógico e crescer na escola.",
+    },
+  ],
+  manicure: [
+    {
+      slug: "administracao",
+      reason:
+        "Precificar serviços, controlar produtos e fidelizar clientes é o que transforma uma manicure em dona de estúdio. Aprenda a estruturar seu negócio desde o início.",
+    },
+    {
+      slug: "cilios-e-sobrancelhas",
+      reason:
+        "Oferecer cílios e design de sobrancelhas no mesmo atendimento aumenta o ticket médio e retém a cliente por muito mais tempo.",
+    },
+  ],
+  "cilios-e-sobrancelhas": [
+    {
+      slug: "administracao",
+      reason:
+        "Quem trabalha com beleza precisa saber administrar agenda, estoque e marketing. Sem gestão, o talento não vira renda estável.",
+    },
+    {
+      slug: "manicure",
+      reason:
+        "Somar manicure ao seu portfólio faz a cliente resolver tudo em um único lugar — e você fatura mais por atendimento.",
+    },
+  ],
+  "auxiliar-veterinario": [
+    {
+      slug: "administracao",
+      reason:
+        "Pet shops e clínicas valorizam quem entende de gestão de estoque, atendimento e vendas. Abre porta para cargos de coordenação.",
+    },
+  ],
+};
 
 export const getCourse = (slug: string) => courses.find((c) => c.slug === slug);
