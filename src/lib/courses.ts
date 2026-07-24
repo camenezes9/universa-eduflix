@@ -11,6 +11,7 @@ import {
   Building2,
   Fuel,
   Stethoscope,
+  Laptop,
   type LucideIcon,
 } from "lucide-react";
 import massoterapiaImg from "@/assets/course-massoterapia.jpg";
