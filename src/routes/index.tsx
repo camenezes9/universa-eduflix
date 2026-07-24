@@ -31,6 +31,7 @@ import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import { WhatsAppFab } from "@/components/site/WhatsAppFab";
 import { CourseCard } from "@/components/site/CourseCard";
+import { FeaturedCourseCard } from "@/components/site/FeaturedCourseCard";
 import { courses } from "@/lib/courses";
 import heroImage from "@/assets/hero-students.jpg";
 
