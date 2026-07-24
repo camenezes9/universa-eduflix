@@ -83,9 +83,10 @@ const promoHighlights = [
   {
     icon: Trophy,
     tag: "Sorteio mensal",
-    title: "Concorra a 50% OFF na matrícula",
-    desc: "Todo mês sorteamos descontos exclusivos entre matriculados.",
+    title: "Concorra a descontos especiais no seu curso",
+    desc: "Para quitação à vista ou parcelamento total do curso no cartão.",
   },
+
   {
     icon: CreditCard,
     tag: "Pagamento facilitado",
