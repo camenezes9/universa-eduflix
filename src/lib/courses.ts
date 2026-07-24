@@ -26,6 +26,7 @@ import administracaoImg from "@/assets/course-administracao.jpg";
 import gestaoImg from "@/assets/course-gestao.jpg";
 import frentistaImg from "@/assets/course-frentista.jpg";
 import recepcaoImg from "@/assets/course-recepcao.jpg";
+import informaticaImg from "@/assets/course-informatica.jpg";
 
 export type Modality = "Presencial" | "EAD";
 
