@@ -207,10 +207,14 @@ function Hero() {
             </div>
           </div>
         </div>
+        <div className="mt-10 flex justify-start lg:absolute lg:right-8 lg:top-1/2 lg:mt-0 lg:-translate-y-1/2 lg:justify-end">
+          <HeroPromoCard />
+        </div>
       </div>
     </section>
   );
 }
+
 
 function Countdown() {
   const target = new Date(Date.now() + 3 * 86400000 + 5 * 3600000);
