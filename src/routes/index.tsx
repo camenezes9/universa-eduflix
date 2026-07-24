@@ -821,7 +821,7 @@ function Home() {
     <div className="min-h-screen bg-background">
       <Header />
       <main>
-        <PromoBar />
+        <Hero />
         <Hero />
         <SocialProof />
         <Presencial />
