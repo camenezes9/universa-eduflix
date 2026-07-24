@@ -31,6 +31,7 @@ import { Header } from "@/components/site/Header";
 import { Footer } from "@/components/site/Footer";
 import { WhatsAppFab } from "@/components/site/WhatsAppFab";
 import { CourseCard } from "@/components/site/CourseCard";
+import { FeaturedCourseCard } from "@/components/site/FeaturedCourseCard";
 import { courses } from "@/lib/courses";
 import heroImage from "@/assets/hero-students.jpg";
 
@@ -183,8 +184,32 @@ function Countdown() {
   );
 }
 
+const featuredContent: Record<string, { tagline: string; highlights: string[]; income: string }> = {
+  massoterapia: {
+    tagline: "Profissão com liberdade",
+    income: "R$ 3.000 a R$ 8.000/mês",
+    highlights: [
+      "Trabalhe por conta própria: atenda em domicílio, em spas ou monte seu consultório",
+      "Sessões cobradas de R$ 80 a R$ 200 — poucos clientes por dia já geram alta renda",
+      "Aulas 100% práticas em macas profissionais, do relaxamento à drenagem linfática",
+      "Mercado em expansão: bem-estar é uma das áreas que mais cresce no Brasil",
+    ],
+  },
+  "cuidador-de-idosos": {
+    tagline: "Empregabilidade garantida",
+    income: "R$ 2.500 a R$ 5.000/mês",
+    highlights: [
+      "Área com falta de profissionais qualificados — vagas abertas o ano inteiro",
+      "Atue em domicílio, hospitais, clínicas ou como cuidador particular autônomo",
+      "Diárias e plantões que podem ultrapassar R$ 300 para profissionais capacitados",
+      "Formação humanizada com primeiros socorros, nutrição e cuidados especializados",
+    ],
+  },
+};
+
 function Presencial() {
-  const list = courses.filter((c) => c.modality === "Presencial");
+  const featured = courses.filter((c) => featuredContent[c.slug]);
+  const rest = courses.filter((c) => c.modality === "Presencial" && !featuredContent[c.slug]);
   return (
     <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
       <div className="mx-auto max-w-2xl text-center">
@@ -195,17 +220,33 @@ function Presencial() {
           Cursos Presenciais em Destaque
         </h2>
         <p className="mt-3 text-muted-foreground">
-          Turmas reduzidas, aulas práticas e certificação reconhecida.
+          Formações que mudam vidas — com alta demanda e potencial de renda comprovado.
         </p>
       </div>
-      <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-        {list.map((c) => (
-          <CourseCard key={c.slug} course={c} />
+
+      <div className="mt-12 grid gap-8 lg:grid-cols-2">
+        {featured.map((c) => (
+          <FeaturedCourseCard key={c.slug} course={c} content={featuredContent[c.slug]} />
         ))}
+      </div>
+
+      <div className="mt-14">
+        <div className="mb-6 flex items-center justify-between gap-4">
+          <h3 className="font-display text-xl font-bold text-navy sm:text-2xl">
+            Outros cursos presenciais
+          </h3>
+          <div className="hidden h-px flex-1 bg-border sm:block" />
+        </div>
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3">
+          {rest.map((c) => (
+            <CourseCard key={c.slug} course={c} />
+          ))}
+        </div>
       </div>
     </section>
   );
 }
+
 
 function EAD() {
   const list = courses.filter((c) => c.modality === "EAD");
