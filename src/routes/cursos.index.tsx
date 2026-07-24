@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { courses } from "@/lib/courses";
 
-export const Route = createFileRoute("/cursos")({
+export const Route = createFileRoute("/cursos/")({
   head: () => ({
     meta: [
       { title: "Catálogo de Cursos — Universo Educa+" },

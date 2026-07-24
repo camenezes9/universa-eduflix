@@ -130,7 +130,7 @@ function CourseDetail() {
             <div>
               <h2 className="font-display text-2xl font-extrabold text-navy">O que você vai aprender</h2>
               <ul className="mt-5 space-y-3">
-                {course.learn.map((l) => (
+                {course.learn.map((l: string) => (
                   <li key={l} className="flex items-start gap-3">
                     <CheckCircle2 className="mt-0.5 size-5 shrink-0 text-orange" />
                     <span className="text-foreground/85">{l}</span>
