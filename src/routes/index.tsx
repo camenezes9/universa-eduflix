@@ -575,7 +575,7 @@ function AlumniBusiness() {
 const benefits = [
   { icon: Award, title: "Certificação Reconhecida", desc: "Certificado válido em todo território nacional." },
   { icon: UserCheck, title: "Professores Experientes", desc: "Docentes atuantes no mercado de trabalho." },
-  { icon: Briefcase, title: "Bolsa de Empregos", desc: "Indicações para vagas parceiras da escola." },
+  { icon: Briefcase, title: "Foco no Mercado", desc: "Conteúdo alinhado com a realidade profissional atual." },
   { icon: BookOpen, title: "Material Incluso", desc: "Apostilas e materiais didáticos sem custo extra." },
   { icon: Building2, title: "Infraestrutura Moderna", desc: "Salas equipadas para aulas 100% práticas." },
   { icon: CreditCard, title: "Pagamento Facilitado", desc: "Parcele em até 12x no cartão ou boleto." },
