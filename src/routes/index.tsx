@@ -822,7 +822,7 @@ function Home() {
       <Header />
       <main>
         <Hero />
-        <Hero />
+
         <SocialProof />
         <Presencial />
         <EAD />
