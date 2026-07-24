@@ -775,7 +775,7 @@ function FinalCTA() {
         </p>
         <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
           <Button asChild variant="cta" size="xl">
-            <Link to="/cursos">Quero me matricular agora</Link>
+            <Link to="/agendar">Quero me matricular agora</Link>
           </Button>
           <Button asChild variant="outlineLight" size="xl">
             <a href="https://wa.me/5500000000000" target="_blank" rel="noreferrer">
