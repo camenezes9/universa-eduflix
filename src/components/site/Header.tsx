@@ -16,7 +16,6 @@ const NAV = [
   { to: "/cursos", label: "Cursos" },
   { to: "/agendar", label: "Agendar visita" },
   { to: "/#depoimentos", label: "Depoimentos" },
-  { to: "/#contato", label: "Contato" },
 ];
 
 export function Header() {
