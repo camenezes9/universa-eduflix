@@ -111,6 +111,20 @@
   --ring: oklch(0.68 0.19 40);
 }
 
+/* Hide Lovable badge */
+#lovable-badge,
+[id^="lovable-badge"],
+a[href*="lovable.dev"][href*="badge"],
+a[href*="lovable.dev/?utm"],
+a[aria-label*="Lovable" i],
+a[title*="Lovable" i] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+
 @layer base {
   * {
     border-color: var(--color-border);
