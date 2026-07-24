@@ -5,14 +5,18 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 
 export function CourseCard({ course }: { course: Course }) {
-  const Icon = course.icon;
   return (
     <div className="card-hover group relative flex flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-soft">
-      <div className="relative h-40 bg-gradient-to-br from-navy via-navy to-orange/60">
-        <div className="absolute inset-0 opacity-20 [background-image:radial-gradient(circle_at_20%_30%,white_1px,transparent_1px)] [background-size:20px_20px]" />
-        <div className="absolute inset-0 grid place-items-center">
-          <Icon className="size-16 text-white/95 drop-shadow-lg" strokeWidth={1.6} />
-        </div>
+      <div className="relative h-44 overflow-hidden">
+        <img
+          src={course.image}
+          alt={course.name}
+          loading="lazy"
+          width={1024}
+          height={1024}
+          className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-navy/60 via-transparent to-transparent" />
         {course.badge && (
           <Badge
             variant="secondary"
