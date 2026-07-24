@@ -79,27 +79,75 @@ function useCountdown(target: Date) {
   return { d, h, m, s };
 }
 
-const promoMessages = [
-  "🎁 SORTEIO MENSAL: 50% de desconto na matrícula",
-  "💳 Parcele no cartão em até 12x sem juros",
-  "⚡ Vagas limitadas — turmas reduzidas",
-  "🎓 Certificação reconhecida",
+const promoHighlights = [
+  {
+    icon: Trophy,
+    tag: "Sorteio mensal",
+    title: "Concorra a 50% OFF na matrícula",
+    desc: "Todo mês sorteamos descontos exclusivos entre matriculados.",
+  },
+  {
+    icon: CreditCard,
+    tag: "Pagamento facilitado",
+    title: "10% à vista ou 12x sem juros no cartão",
+    desc: "Escolha a forma que cabe no seu bolso, sem burocracia.",
+  },
+  {
+    icon: ShieldCheck,
+    tag: "Certificação nacional",
+    title: "Diploma reconhecido em todo o Brasil",
+    desc: "Válido para currículo, concursos e registro profissional.",
+  },
+  {
+    icon: Flame,
+    tag: "Vagas limitadas",
+    title: "Turmas reduzidas — últimas vagas",
+    desc: "Garanta a sua antes do fechamento da próxima turma.",
+  },
 ];
 
-function PromoBar() {
+function HeroPromoCard() {
+  const [i, setI] = useState(0);
+  useEffect(() => {
+    const id = setInterval(() => setI((v) => (v + 1) % promoHighlights.length), 4000);
+    return () => clearInterval(id);
+  }, []);
+  const item = promoHighlights[i];
+  const Icon = item.icon;
   return (
-    <div className="overflow-hidden bg-navy py-2.5 text-navy-foreground">
-      <div className="flex w-max animate-marquee gap-12 whitespace-nowrap text-sm font-semibold">
-        {[...promoMessages, ...promoMessages, ...promoMessages].map((m, i) => (
-          <span key={i} className="flex items-center gap-2">
-            {m}
-            <span className="text-orange">•</span>
-          </span>
-        ))}
+    <div className="pointer-events-auto w-full max-w-sm">
+      <div
+        key={i}
+        className="animate-float rounded-2xl border border-white/25 bg-white/10 p-4 text-white shadow-[0_20px_60px_-20px_rgba(0,0,0,0.6)] backdrop-blur-xl"
+        style={{ WebkitBackdropFilter: "blur(20px)" }}
+      >
+        <div className="flex items-start gap-3">
+          <div className="grid size-11 shrink-0 place-items-center rounded-xl bg-orange/90 text-orange-foreground shadow-lg">
+            <Icon className="size-5" />
+          </div>
+          <div className="min-w-0">
+            <span className="inline-block rounded-full bg-white/15 px-2 py-0.5 text-[10px] font-bold uppercase tracking-widest text-white/90">
+              {item.tag}
+            </span>
+            <p className="mt-1.5 text-sm font-bold leading-snug">{item.title}</p>
+            <p className="mt-1 text-xs text-white/75">{item.desc}</p>
+          </div>
+        </div>
+        <div className="mt-3 flex gap-1.5">
+          {promoHighlights.map((_, idx) => (
+            <span
+              key={idx}
+              className={`h-1 flex-1 rounded-full transition-all ${
+                idx === i ? "bg-orange" : "bg-white/25"
+              }`}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );
 }
+
 
 function Hero() {
   return (
