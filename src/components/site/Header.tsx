@@ -53,9 +53,10 @@ export function Header() {
               <GraduationCap className="size-4" /> Portal do aluno
             </a>
           </Button>
-          <Button asChild variant="cta" size="sm">
+          <Button asChild variant="cta" size="sm" className="glass-led border-0">
             <Link to="/agendar">Agendar matrícula</Link>
           </Button>
+
         </div>
         <Sheet open={open} onOpenChange={setOpen}>
           <SheetTrigger asChild>
