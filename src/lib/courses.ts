@@ -13,6 +13,18 @@ import {
   Stethoscope,
   type LucideIcon,
 } from "lucide-react";
+import massoterapiaImg from "@/assets/course-massoterapia.jpg";
+import cuidadorImg from "@/assets/course-cuidador.jpg";
+import librasImg from "@/assets/course-libras.jpg";
+import inglesImg from "@/assets/course-ingles.jpg";
+import monitorImg from "@/assets/course-monitor.jpg";
+import veterinarioImg from "@/assets/course-veterinario.jpg";
+import manicureImg from "@/assets/course-manicure.jpg";
+import ciliosImg from "@/assets/course-cilios.jpg";
+import administracaoImg from "@/assets/course-administracao.jpg";
+import gestaoImg from "@/assets/course-gestao.jpg";
+import frentistaImg from "@/assets/course-frentista.jpg";
+import recepcaoImg from "@/assets/course-recepcao.jpg";
 
 export type Modality = "Presencial" | "EAD";
 
@@ -20,6 +32,7 @@ export type Course = {
   slug: string;
   name: string;
   icon: LucideIcon;
+  image: string;
   modality: Modality;
   duration: string;
   hours: string;
@@ -37,6 +50,7 @@ export type Course = {
 export const courses: Course[] = [
   {
     slug: "massoterapia",
+    image: massoterapiaImg,
     name: "Massoterapia",
     icon: HandHeart,
     modality: "Presencial",
@@ -61,6 +75,7 @@ export const courses: Course[] = [
   },
   {
     slug: "cuidador-de-idosos",
+    image: cuidadorImg,
     name: "Cuidador de Idosos",
     icon: HeartPulse,
     modality: "Presencial",
@@ -85,6 +100,7 @@ export const courses: Course[] = [
   },
   {
     slug: "libras",
+    image: librasImg,
     name: "Libras",
     icon: Hand,
     modality: "Presencial",
@@ -108,6 +124,7 @@ export const courses: Course[] = [
   },
   {
     slug: "ingles",
+    image: inglesImg,
     name: "Inglês",
     icon: Globe2,
     modality: "Presencial",
@@ -131,6 +148,7 @@ export const courses: Course[] = [
   },
   {
     slug: "monitor-escolar",
+    image: monitorImg,
     name: "Monitor Escolar",
     icon: GraduationCap,
     modality: "Presencial",
@@ -155,6 +173,7 @@ export const courses: Course[] = [
   },
   {
     slug: "auxiliar-veterinario",
+    image: veterinarioImg,
     name: "Auxiliar Veterinário",
     icon: PawPrint,
     modality: "Presencial",
@@ -178,6 +197,7 @@ export const courses: Course[] = [
   },
   {
     slug: "manicure",
+    image: manicureImg,
     name: "Manicure",
     icon: Sparkles,
     modality: "Presencial",
@@ -201,6 +221,7 @@ export const courses: Course[] = [
   },
   {
     slug: "cilios-e-sobrancelhas",
+    image: ciliosImg,
     name: "Cílios e Sobrancelhas",
     icon: Eye,
     modality: "Presencial",
@@ -225,6 +246,7 @@ export const courses: Course[] = [
   },
   {
     slug: "administracao",
+    image: administracaoImg,
     name: "Administração",
     icon: Briefcase,
     modality: "EAD",
@@ -247,6 +269,7 @@ export const courses: Course[] = [
   },
   {
     slug: "gestao-empresarial",
+    image: gestaoImg,
     name: "Gestão Empresarial",
     icon: Building2,
     modality: "EAD",
@@ -269,6 +292,7 @@ export const courses: Course[] = [
   },
   {
     slug: "frentista",
+    image: frentistaImg,
     name: "Frentista",
     icon: Fuel,
     modality: "EAD",
@@ -291,6 +315,7 @@ export const courses: Course[] = [
   },
   {
     slug: "recepcao-hospitalar",
+    image: recepcaoImg,
     name: "Recepção Hospitalar",
     icon: Stethoscope,
     modality: "EAD",
