@@ -190,8 +190,8 @@ function CourseDetail() {
                 50% OFF na matrícula
               </div>
               <div className="mt-6 space-y-3">
-                <Button variant="cta" size="xl" className="w-full">
-                  Matricule-se agora
+                <Button variant="cta" size="xl" className="w-full" asChild>
+                  <Link to="/agendar">Matricule-se agora</Link>
                 </Button>
                 <Button variant="outline" size="lg" className="w-full" asChild>
                   <a href="https://wa.me/5500000000000" target="_blank" rel="noreferrer">
