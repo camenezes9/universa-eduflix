@@ -46,7 +46,7 @@ export function Header() {
             <Phone className="size-4" /> (00) 0000-0000
           </a>
           <Button asChild variant="cta" size="sm">
-            <Link to="/cursos">Matricule-se</Link>
+            <Link to="/agendar">Agendar matrícula</Link>
           </Button>
         </div>
         <Sheet open={open} onOpenChange={setOpen}>
