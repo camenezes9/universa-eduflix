@@ -121,8 +121,9 @@ function Hero() {
           <p className="mt-6 max-w-2xl text-lg text-white/85 sm:text-xl">
             Cursos profissionalizantes presenciais e EAD com até{" "}
             <strong className="text-orange">50% de desconto</strong>. Certificação
-            reconhecida e bolsa de empregos.
+            reconhecida.
           </p>
+
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Button asChild variant="cta" size="xl">
               <Link to="/cursos">Quero minha vaga com 50% OFF</Link>
