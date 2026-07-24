@@ -55,7 +55,7 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "Cursos profissionalizantes com 50% OFF. Certificação reconhecida, turmas reduzidas e bolsa de empregos.",
+          "Cursos profissionalizantes com 50% OFF. Certificação reconhecida e turmas reduzidas.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/" },
