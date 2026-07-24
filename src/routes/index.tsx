@@ -89,9 +89,10 @@ const promoHighlights = [
   {
     icon: CreditCard,
     tag: "Pagamento facilitado",
-    title: "10% à vista ou 12x sem juros no cartão",
-    desc: "Escolha a forma que cabe no seu bolso, sem burocracia.",
+    title: "Descontos exclusivos à vista ou em até 12x",
+    desc: "Condições especiais para você garantir sua vaga hoje.",
   },
+
   {
     icon: ShieldCheck,
     tag: "Certificação nacional",
