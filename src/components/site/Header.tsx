@@ -16,7 +16,6 @@ const NAV = [
   { to: "/cursos", label: "Cursos" },
   { to: "/agendar", label: "Agendar visita" },
   { to: "/#depoimentos", label: "Depoimentos" },
-  { to: "/#contato", label: "Contato" },
 ];
 
 export function Header() {
@@ -40,10 +39,10 @@ export function Header() {
         </nav>
         <div className="hidden items-center gap-3 md:flex">
           <a
-            href="tel:+5500000000000"
+            href="tel:+551935340074"
             className="flex items-center gap-2 text-sm font-semibold text-navy"
           >
-            <Phone className="size-4" /> (00) 0000-0000
+            <Phone className="size-4" /> (19) 3534-0074
           </a>
           <Button asChild variant="outline" size="sm">
             <a
