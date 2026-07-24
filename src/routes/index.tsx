@@ -368,6 +368,155 @@ function Testimonials() {
   );
 }
 
+const alumniBusinesses = [
+  {
+    name: "Camila Ribeiro",
+    business: "Espaço Camila Terapias",
+    neighborhood: "Cidade Jardim — Rio Claro",
+    image: alumni1Img,
+    course: "Massoterapia",
+    year: "Formada em 2019",
+    quote:
+      "Comecei atendendo em casa depois do curso. Hoje tenho meu espaço próprio, agenda cheia e duas colaboradoras.",
+    stats: [
+      { label: "Clientes/mês", value: "180+" },
+      { label: "Anos no mercado", value: "5" },
+    ],
+  },
+  {
+    name: "Renata Oliveira",
+    business: "Renata Massoterapia & Relax",
+    neighborhood: "Centro — Rio Claro",
+    image: alumni2Img,
+    course: "Massoterapia + Especializações",
+    year: "Formada em 2017",
+    quote:
+      "A escola me deu técnica e confiança. Abri minha clínica no centro e hoje faturo mais do que sonhei quando comecei.",
+    stats: [
+      { label: "Faturamento", value: "R$ 15k/mês" },
+      { label: "Salas de atendimento", value: "3" },
+    ],
+  },
+  {
+    name: "Patrícia Almeida",
+    business: "Bem-Estar Studio",
+    neighborhood: "Jardim América — Rio Claro",
+    image: alumni3Img,
+    course: "Massoterapia",
+    year: "Formada em 2020",
+    quote:
+      "Larguei o trabalho CLT no primeiro ano como massoterapeuta autônoma. Hoje meu studio é referência no bairro.",
+    stats: [
+      { label: "Avaliação Google", value: "4,9 ★" },
+      { label: "Retorno de clientes", value: "92%" },
+    ],
+  },
+];
+
+function AlumniBusiness() {
+  return (
+    <section className="relative overflow-hidden bg-gradient-to-b from-background via-secondary/40 to-background py-16 sm:py-20">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-3xl text-center">
+          <span className="inline-flex items-center gap-2 rounded-full bg-orange/10 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-orange">
+            <Trophy className="size-4" /> Ex-alunas de sucesso
+          </span>
+          <h2 className="mt-4 font-display text-3xl font-extrabold text-navy sm:text-4xl">
+            De aluna a dona do próprio negócio
+          </h2>
+          <p className="mt-3 text-lg text-muted-foreground">
+            Conheça 3 clínicas de massoterapia hoje <strong className="text-navy">conceituadas em Rio Claro</strong> — todas comandadas por ex-alunas da Universo Educa+.
+            O próximo case de sucesso pode ser o seu.
+          </p>
+        </div>
+
+        <div className="mt-12 grid gap-6 lg:grid-cols-3">
+          {alumniBusinesses.map((a) => (
+            <article
+              key={a.name}
+              className="card-hover group flex flex-col overflow-hidden rounded-2xl border border-border bg-card shadow-soft"
+            >
+              <div className="relative aspect-[4/3] overflow-hidden">
+                <img
+                  src={a.image}
+                  alt={`${a.name}, proprietária do ${a.business}`}
+                  width={1024}
+                  height={1024}
+                  loading="lazy"
+                  className="size-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/20 to-transparent" />
+                <div className="absolute left-4 top-4 inline-flex items-center gap-1.5 rounded-full bg-orange px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-orange-foreground shadow-elevated">
+                  <Sparkles className="size-3.5" /> Case real
+                </div>
+                <div className="absolute bottom-0 left-0 right-0 p-5 text-white">
+                  <div className="font-display text-xl font-extrabold leading-tight">
+                    {a.business}
+                  </div>
+                  <div className="mt-1 flex items-center gap-1 text-xs text-white/85">
+                    <MapPin className="size-3.5" /> {a.neighborhood}
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex flex-1 flex-col p-6">
+                <div className="flex items-center gap-3">
+                  <div>
+                    <div className="font-display font-bold text-navy">{a.name}</div>
+                    <div className="text-xs text-muted-foreground">
+                      {a.course} · {a.year}
+                    </div>
+                  </div>
+                </div>
+
+                <Quote className="mt-4 size-6 text-orange/40" />
+                <p className="mt-1 text-sm italic text-foreground/85">
+                  "{a.quote}"
+                </p>
+
+                <div className="mt-auto grid grid-cols-2 gap-3 border-t border-border pt-5">
+                  {a.stats.map((s) => (
+                    <div key={s.label} className="rounded-xl bg-secondary/70 p-3 text-center">
+                      <div className="font-display text-lg font-extrabold text-navy">
+                        {s.value}
+                      </div>
+                      <div className="text-[11px] font-semibold uppercase tracking-wide text-muted-foreground">
+                        {s.label}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+
+        {/* CTA card */}
+        <div className="mt-12 overflow-hidden rounded-2xl bg-gradient-to-br from-navy via-navy to-navy/90 p-8 text-white shadow-elevated sm:p-12">
+          <div className="grid items-center gap-6 lg:grid-cols-[1fr_auto]">
+            <div>
+              <div className="inline-flex items-center gap-2 rounded-full bg-orange/20 px-3 py-1 text-xs font-bold uppercase tracking-widest text-orange">
+                <TrendingUp className="size-4" /> Seu futuro começa aqui
+              </div>
+              <h3 className="mt-3 font-display text-2xl font-extrabold sm:text-3xl">
+                Da sala de aula ao seu próprio consultório
+              </h3>
+              <p className="mt-2 max-w-2xl text-white/85">
+                Todo mês formamos novos empreendedores da saúde e do bem-estar. Aprenda a técnica, monte sua marca e conquiste sua clientela — a Universo Educa+ te acompanha em cada etapa.
+              </p>
+            </div>
+            <Button asChild variant="cta" size="xl">
+              <Link to="/agendar">
+                Quero ser o próximo case <ChevronRight />
+              </Link>
+            </Button>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 const benefits = [
   { icon: Award, title: "Certificação Reconhecida", desc: "Certificado válido em todo território nacional." },
   { icon: UserCheck, title: "Professores Experientes", desc: "Docentes atuantes no mercado de trabalho." },
