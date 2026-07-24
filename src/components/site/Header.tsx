@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Menu, Phone } from "lucide-react";
+import { GraduationCap, Menu, Phone } from "lucide-react";
 import { useState } from "react";
 import { Logo } from "./Logo";
 import { Button } from "@/components/ui/button";
