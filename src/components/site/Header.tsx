@@ -14,6 +14,7 @@ import {
 const NAV = [
   { to: "/", label: "Início" },
   { to: "/cursos", label: "Cursos" },
+  { to: "/agendar", label: "Agendar visita" },
   { to: "/#depoimentos", label: "Depoimentos" },
   { to: "/#contato", label: "Contato" },
 ];
