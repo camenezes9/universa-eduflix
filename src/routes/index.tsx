@@ -34,6 +34,8 @@ import { CourseCard } from "@/components/site/CourseCard";
 import { FeaturedCourseCard } from "@/components/site/FeaturedCourseCard";
 import { courses } from "@/lib/courses";
 import heroImage from "@/assets/hero-students.jpg";
+import massoterapiaImg from "@/assets/course-massoterapia.jpg";
+import cuidadorImg from "@/assets/course-cuidador.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -184,10 +186,14 @@ function Countdown() {
   );
 }
 
-const featuredContent: Record<string, { tagline: string; highlights: string[]; income: string }> = {
+const featuredContent: Record<
+  string,
+  { tagline: string; highlights: string[]; income: string; image: string }
+> = {
   massoterapia: {
     tagline: "Profissão com liberdade",
     income: "R$ 3.000 a R$ 8.000/mês",
+    image: massoterapiaImg,
     highlights: [
       "Trabalhe por conta própria: atenda em domicílio, em spas ou monte seu consultório",
       "Sessões cobradas de R$ 80 a R$ 200 — poucos clientes por dia já geram alta renda",
@@ -198,6 +204,7 @@ const featuredContent: Record<string, { tagline: string; highlights: string[]; i
   "cuidador-de-idosos": {
     tagline: "Empregabilidade garantida",
     income: "R$ 2.500 a R$ 5.000/mês",
+    image: cuidadorImg,
     highlights: [
       "Área com falta de profissionais qualificados — vagas abertas o ano inteiro",
       "Atue em domicílio, hospitais, clínicas ou como cuidador particular autônomo",
