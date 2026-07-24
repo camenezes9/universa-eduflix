@@ -45,6 +45,15 @@ export function Header() {
           >
             <Phone className="size-4" /> (00) 0000-0000
           </a>
+          <Button asChild variant="outline" size="sm">
+            <a
+              href="https://ead.ouromoderno.com.br/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <GraduationCap className="size-4" /> Portal do aluno
+            </a>
+          </Button>
           <Button asChild variant="cta" size="sm">
             <Link to="/agendar">Agendar matrícula</Link>
           </Button>
