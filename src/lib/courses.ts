@@ -32,6 +32,7 @@ export type Course = {
   slug: string;
   name: string;
   icon: LucideIcon;
+  image: string;
   modality: Modality;
   duration: string;
   hours: string;
