@@ -36,6 +36,9 @@ import { courses } from "@/lib/courses";
 import heroImage from "@/assets/hero-students.jpg";
 import massoterapiaImg from "@/assets/course-massoterapia.jpg";
 import cuidadorImg from "@/assets/course-cuidador.jpg";
+import alumni1Img from "@/assets/alumni-clinic-1.jpg";
+import alumni2Img from "@/assets/alumni-clinic-2.jpg";
+import alumni3Img from "@/assets/alumni-clinic-3.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
