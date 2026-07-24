@@ -86,7 +86,17 @@ export function Header() {
                   {n.label}
                 </Link>
               ))}
-              <Button asChild variant="cta" className="mt-4">
+              <Button asChild variant="outline" className="mt-4">
+                <a
+                  href="https://ead.ouromoderno.com.br/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setOpen(false)}
+                >
+                  <GraduationCap className="size-4" /> Portal do aluno
+                </a>
+              </Button>
+              <Button asChild variant="cta" className="mt-2">
                 <Link to="/agendar" onClick={() => setOpen(false)}>
                   Agendar matrícula
                 </Link>
