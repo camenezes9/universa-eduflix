@@ -354,7 +354,7 @@ const testimonials = [
   {
     name: "Carlos Eduardo",
     course: "Cuidador de Idosos",
-    text: "Consegui meu primeiro emprego na área com o apoio da bolsa de empregos da escola. Recomendo demais!",
+    text: "O curso foi transformador. Aulas práticas, professores atenciosos e conteúdo direto ao ponto. Recomendo demais!",
   },
   {
     name: "Juliana Souza",
