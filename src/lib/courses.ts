@@ -50,6 +50,7 @@ export type Course = {
 export const courses: Course[] = [
   {
     slug: "massoterapia",
+    image: massoterapiaImg,
     name: "Massoterapia",
     icon: HandHeart,
     modality: "Presencial",
@@ -74,6 +75,7 @@ export const courses: Course[] = [
   },
   {
     slug: "cuidador-de-idosos",
+    image: cuidadorImg,
     name: "Cuidador de Idosos",
     icon: HeartPulse,
     modality: "Presencial",
@@ -98,6 +100,7 @@ export const courses: Course[] = [
   },
   {
     slug: "libras",
+    image: librasImg,
     name: "Libras",
     icon: Hand,
     modality: "Presencial",
@@ -121,6 +124,7 @@ export const courses: Course[] = [
   },
   {
     slug: "ingles",
+    image: inglesImg,
     name: "Inglês",
     icon: Globe2,
     modality: "Presencial",
@@ -144,6 +148,7 @@ export const courses: Course[] = [
   },
   {
     slug: "monitor-escolar",
+    image: monitorImg,
     name: "Monitor Escolar",
     icon: GraduationCap,
     modality: "Presencial",
@@ -168,6 +173,7 @@ export const courses: Course[] = [
   },
   {
     slug: "auxiliar-veterinario",
+    image: veterinarioImg,
     name: "Auxiliar Veterinário",
     icon: PawPrint,
     modality: "Presencial",
@@ -191,6 +197,7 @@ export const courses: Course[] = [
   },
   {
     slug: "manicure",
+    image: manicureImg,
     name: "Manicure",
     icon: Sparkles,
     modality: "Presencial",
@@ -214,6 +221,7 @@ export const courses: Course[] = [
   },
   {
     slug: "cilios-e-sobrancelhas",
+    image: ciliosImg,
     name: "Cílios e Sobrancelhas",
     icon: Eye,
     modality: "Presencial",
@@ -238,6 +246,7 @@ export const courses: Course[] = [
   },
   {
     slug: "administracao",
+    image: administracaoImg,
     name: "Administração",
     icon: Briefcase,
     modality: "EAD",
@@ -260,6 +269,7 @@ export const courses: Course[] = [
   },
   {
     slug: "gestao-empresarial",
+    image: gestaoImg,
     name: "Gestão Empresarial",
     icon: Building2,
     modality: "EAD",
@@ -282,6 +292,7 @@ export const courses: Course[] = [
   },
   {
     slug: "frentista",
+    image: frentistaImg,
     name: "Frentista",
     icon: Fuel,
     modality: "EAD",
@@ -304,6 +315,7 @@ export const courses: Course[] = [
   },
   {
     slug: "recepcao-hospitalar",
+    image: recepcaoImg,
     name: "Recepção Hospitalar",
     icon: Stethoscope,
     modality: "EAD",
