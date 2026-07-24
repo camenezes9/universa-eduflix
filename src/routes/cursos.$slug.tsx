@@ -108,8 +108,9 @@ function CourseDetail() {
           </div>
         </section>
 
-        <section className="mx-auto -mt-10 max-w-7xl px-4 sm:px-6 lg:px-8">
+        <section className="relative z-10 mx-auto -mt-10 max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-4 rounded-2xl border border-border bg-card p-6 shadow-elevated sm:grid-cols-2 lg:grid-cols-4">
+
             {[
               { icon: Clock, l: "Duração", v: course.duration },
               { icon: GraduationCap, l: "Carga horária", v: course.hours },
