@@ -202,7 +202,7 @@ function CourseDetail() {
               <ul className="mt-6 space-y-2 border-t border-border pt-5 text-sm text-foreground/80">
                 <li className="flex items-center gap-2"><CheckCircle2 className="size-4 text-success" /> Parcele em até 12x no cartão</li>
                 <li className="flex items-center gap-2"><CheckCircle2 className="size-4 text-success" /> Material didático incluso</li>
-                <li className="flex items-center gap-2"><CheckCircle2 className="size-4 text-success" /> Bolsa de empregos exclusiva</li>
+                <li className="flex items-center gap-2"><CheckCircle2 className="size-4 text-success" /> Certificação reconhecida nacionalmente</li>
                 <li className="flex items-center gap-2"><Users className="size-4 text-navy" /> Turmas reduzidas</li>
               </ul>
             </div>
