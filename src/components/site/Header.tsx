@@ -14,6 +14,7 @@ import {
 const NAV = [
   { to: "/", label: "Início" },
   { to: "/cursos", label: "Cursos" },
+  { to: "/agendar", label: "Agendar visita" },
   { to: "/#depoimentos", label: "Depoimentos" },
   { to: "/#contato", label: "Contato" },
 ];
@@ -45,7 +46,7 @@ export function Header() {
             <Phone className="size-4" /> (00) 0000-0000
           </a>
           <Button asChild variant="cta" size="sm">
-            <Link to="/cursos">Matricule-se</Link>
+            <Link to="/agendar">Agendar matrícula</Link>
           </Button>
         </div>
         <Sheet open={open} onOpenChange={setOpen}>
@@ -77,8 +78,8 @@ export function Header() {
                 </Link>
               ))}
               <Button asChild variant="cta" className="mt-4">
-                <Link to="/cursos" onClick={() => setOpen(false)}>
-                  Matricule-se
+                <Link to="/agendar" onClick={() => setOpen(false)}>
+                  Agendar matrícula
                 </Link>
               </Button>
             </div>
