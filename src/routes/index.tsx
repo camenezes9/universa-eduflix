@@ -35,12 +35,12 @@ import { WhatsAppFab } from "@/components/site/WhatsAppFab";
 import { CourseCard } from "@/components/site/CourseCard";
 import { FeaturedCourseCard } from "@/components/site/FeaturedCourseCard";
 import { courses } from "@/lib/courses";
-import heroImage from "@/assets/hero-students.jpg";
-import massoterapiaImg from "@/assets/course-massoterapia.jpg";
-import cuidadorImg from "@/assets/course-cuidador.jpg";
-import alumni1Img from "@/assets/alumni-clinic-1.jpg";
-import alumni2Img from "@/assets/alumni-clinic-2.jpg";
-import alumni3Img from "@/assets/alumni-clinic-3.jpg";
+import heroImage from "@/assets/hero-students.webp";
+import massoterapiaImg from "@/assets/course-massoterapia.webp";
+import cuidadorImg from "@/assets/course-cuidador.webp";
+import alumni1Img from "@/assets/alumni-clinic-1.webp";
+import alumni2Img from "@/assets/alumni-clinic-2.webp";
+import alumni3Img from "@/assets/alumni-clinic-3.webp";
 
 export const Route = createFileRoute("/")({
   head: () => {
@@ -48,7 +48,7 @@ export const Route = createFileRoute("/")({
     const description =
       "Cursos profissionalizantes presenciais e EAD em Rio Claro/SP com até 50% de desconto na matrícula. Massoterapia, Cuidador de Idosos, Libras, Inglês e mais. Certificação reconhecida.";
     const url = "https://universoeduca.buffallos.online/";
-    const image = "https://universoeduca.buffallos.online/og-image.jpg";
+    const image = "https://universoeduca.buffallos.online/og-image.webp";
     return {
       meta: [
         { title },

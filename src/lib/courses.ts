@@ -14,19 +14,19 @@ import {
   Laptop,
   type LucideIcon,
 } from "lucide-react";
-import massoterapiaImg from "@/assets/course-massoterapia.jpg";
-import cuidadorImg from "@/assets/course-cuidador.jpg";
-import librasImg from "@/assets/course-libras.jpg";
-import inglesImg from "@/assets/course-ingles.jpg";
-import monitorImg from "@/assets/course-monitor.jpg";
-import veterinarioImg from "@/assets/course-veterinario.jpg";
-import manicureImg from "@/assets/course-manicure.jpg";
-import ciliosImg from "@/assets/course-cilios.jpg";
-import administracaoImg from "@/assets/course-administracao.jpg";
-import gestaoImg from "@/assets/course-gestao.jpg";
-import frentistaImg from "@/assets/course-frentista.jpg";
-import recepcaoImg from "@/assets/course-recepcao.jpg";
-import informaticaImg from "@/assets/course-informatica.jpg";
+import massoterapiaImg from "@/assets/course-massoterapia.webp";
+import cuidadorImg from "@/assets/course-cuidador.webp";
+import librasImg from "@/assets/course-libras.webp";
+import inglesImg from "@/assets/course-ingles.webp";
+import monitorImg from "@/assets/course-monitor.webp";
+import veterinarioImg from "@/assets/course-veterinario.webp";
+import manicureImg from "@/assets/course-manicure.webp";
+import ciliosImg from "@/assets/course-cilios.webp";
+import administracaoImg from "@/assets/course-administracao.webp";
+import gestaoImg from "@/assets/course-gestao.webp";
+import frentistaImg from "@/assets/course-frentista.webp";
+import recepcaoImg from "@/assets/course-recepcao.webp";
+import informaticaImg from "@/assets/course-informatica.webp";
 
 export type Modality = "Presencial" | "EAD";
 
