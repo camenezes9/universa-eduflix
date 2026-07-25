@@ -11,21 +11,23 @@ import { Badge } from "@/components/ui/badge";
 import { courses } from "@/lib/courses";
 
 export const Route = createFileRoute("/cursos/")({
-  head: () => ({
-    meta: [
-      { title: "Catálogo de Cursos — Universo Educa+" },
-      {
-        name: "description",
-        content:
-          "Explore todos os cursos profissionalizantes presenciais e EAD da Universo Educa+. Filtre por modalidade, área e preço.",
-      },
-      { property: "og:title", content: "Catálogo de Cursos — Universo Educa+" },
-      { property: "og:description", content: "Todos os cursos com 50% de desconto na matrícula." },
-      { property: "og:type", content: "website" },
-      { property: "og:url", content: "/cursos" },
-    ],
-    links: [{ rel: "canonical", href: "/cursos" }],
-  }),
+  head: () => {
+    const title = "Catálogo de Cursos Profissionalizantes — Universo Educa+";
+    const description =
+      "Explore todos os cursos profissionalizantes presenciais e EAD da Universo Educa+ em Rio Claro. Filtre por modalidade, área e encontre o curso ideal com 50% OFF.";
+    const url = "https://universoeduca.buffallos.online/cursos";
+    return {
+      meta: [
+        { title },
+        { name: "description", content: description },
+        { property: "og:title", content: title },
+        { property: "og:description", content: description },
+        { property: "og:type", content: "website" },
+        { property: "og:url", content: url },
+      ],
+      links: [{ rel: "canonical", href: url }],
+    };
+  },
   component: CoursesPage,
 });
 
