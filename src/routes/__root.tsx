@@ -77,24 +77,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Universo Educa+ — Cursos Profissionalizantes com 50% OFF" },
-      { name: "description", content: "Cursos profissionalizantes presenciais e EAD com até 50% de desconto. Massoterapia, Cuidador de Idosos, Libras, Inglês e mais. Matrículas abertas 2026." },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Universo Educa+ — Cursos Profissionalizantes com 50% OFF" },
-      { property: "og:description", content: "Cursos profissionalizantes presenciais e EAD com até 50% de desconto. Massoterapia, Cuidador de Idosos, Libras, Inglês e mais. Matrículas abertas 2026." },
+      { name: "theme-color", content: "#1B3B6F" },
       { property: "og:type", content: "website" },
+      { property: "og:site_name", content: "Universo Educa+" },
+      { property: "og:locale", content: "pt_BR" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
-      { name: "twitter:title", content: "Universo Educa+ — Cursos Profissionalizantes com 50% OFF" },
-      { name: "twitter:description", content: "Cursos profissionalizantes presenciais e EAD com até 50% de desconto. Massoterapia, Cuidador de Idosos, Libras, Inglês e mais. Matrículas abertas 2026." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/2b4c3a49-f1b7-4501-90c0-c1b2c2dc744f/id-preview-9c346a12--b6442819-aca7-4d0a-a949-8874b19f8744.lovable.app-1784937676386.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/2b4c3a49-f1b7-4501-90c0-c1b2c2dc744f/id-preview-9c346a12--b6442819-aca7-4d0a-a949-8874b19f8744.lovable.app-1784937676386.png" },
     ],
     links: [
-      {
-        rel: "stylesheet",
-        href: appCss,
-      },
+      { rel: "stylesheet", href: appCss },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
@@ -102,6 +92,25 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: "https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Open+Sans:wght@400;500;600;700&display=swap",
       },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "EducationalOrganization",
+          name: "Universo Educa+",
+          url: "https://universoeduca.buffallos.online",
+          telephone: "+55-19-3534-0074",
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: "Rua 2, 1145, entre avenidas 1 e 2",
+            addressLocality: "Rio Claro",
+            addressRegion: "SP",
+            addressCountry: "BR",
+          },
+        }),
+      },
     ],
   }),
   shellComponent: RootShell,
@@ -112,7 +121,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="pt-BR">
       <head>
         <HeadContent />
       </head>

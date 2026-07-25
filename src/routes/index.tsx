@@ -43,25 +43,28 @@ import alumni2Img from "@/assets/alumni-clinic-2.jpg";
 import alumni3Img from "@/assets/alumni-clinic-3.jpg";
 
 export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "Universo Educa+ — Cursos Profissionalizantes com 50% OFF" },
-      {
-        name: "description",
-        content:
-          "Cursos profissionalizantes presenciais e EAD com até 50% de desconto. Massoterapia, Cuidador de Idosos, Libras, Inglês e mais. Matrículas abertas 2026.",
-      },
-      { property: "og:title", content: "Universo Educa+ — Cursos Profissionalizantes com 50% OFF" },
-      {
-        property: "og:description",
-        content:
-          "Cursos profissionalizantes presenciais e EAD com até 50% de desconto. Massoterapia, Cuidador de Idosos, Libras, Inglês e mais. Matrículas abertas 2026.",
-      },
-      { property: "og:type", content: "website" },
-      { property: "og:url", content: "/" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-  }),
+  head: () => {
+    const title = "Universo Educa+ — Cursos Profissionalizantes em Rio Claro";
+    const description =
+      "Cursos profissionalizantes presenciais e EAD em Rio Claro/SP com até 50% de desconto na matrícula. Massoterapia, Cuidador de Idosos, Libras, Inglês e mais. Certificação reconhecida.";
+    const url = "https://universoeduca.buffallos.online/";
+    const image = "https://universoeduca.buffallos.online/og-image.jpg";
+    return {
+      meta: [
+        { title },
+        { name: "description", content: description },
+        { property: "og:title", content: title },
+        { property: "og:description", content: description },
+        { property: "og:type", content: "website" },
+        { property: "og:url", content: url },
+        { property: "og:image", content: image },
+        { name: "twitter:title", content: title },
+        { name: "twitter:description", content: description },
+        { name: "twitter:image", content: image },
+      ],
+      links: [{ rel: "canonical", href: url }],
+    };
+  },
   component: Home,
 });
 

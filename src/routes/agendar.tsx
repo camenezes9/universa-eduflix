@@ -31,24 +31,23 @@ const SCHOOL_ADDRESS = "Rua 2, 1145, entre avenidas 1 e 2 — Centro, Rio Claro/
 const WHATSAPP_NUMBER = "5500000000000"; // TODO: substituir pelo número real da escola
 
 export const Route = createFileRoute("/agendar")({
-  head: () => ({
-    meta: [
-      { title: "Agendar matrícula presencial — Universo Educa+" },
-      {
-        name: "description",
-        content:
-          "Agende sua visita à escola para efetuar a matrícula presencial. Escolha o melhor dia e horário — Rua 2, 1145, Centro de Rio Claro.",
-      },
-      { property: "og:title", content: "Agende sua visita — Universo Educa+" },
-      {
-        property: "og:description",
-        content:
-          "Escolha dia e horário para conhecer a escola e concluir sua matrícula presencial.",
-      },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-  }),
+  head: () => {
+    const title = "Agendar matrícula presencial — Universo Educa+";
+    const description =
+      "Agende sua visita à escola para efetuar a matrícula presencial. Escolha o melhor dia e horário — Rua 2, 1145, Centro de Rio Claro.";
+    const url = "https://universoeduca.buffallos.online/agendar";
+    return {
+      meta: [
+        { title },
+        { name: "description", content: description },
+        { property: "og:title", content: title },
+        { property: "og:description", content: description },
+        { property: "og:type", content: "website" },
+        { property: "og:url", content: url },
+      ],
+      links: [{ rel: "canonical", href: url }],
+    };
+  },
   component: AgendarPage,
 });
 
