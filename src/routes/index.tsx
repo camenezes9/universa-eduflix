@@ -161,10 +161,12 @@ function Hero() {
       <div className="absolute inset-0">
         <img
           src={heroImage}
+          srcSet={`${heroImageMobile} 768w, ${heroImage} 1440w`}
+          sizes="100vw"
           alt="Estudantes em sala de aula da Universo Educa+"
           className="size-full object-cover"
-          width={1920}
-          height={1280}
+          width={1440}
+          height={960}
           fetchPriority="high"
           decoding="async"
         />
