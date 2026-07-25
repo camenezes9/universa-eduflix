@@ -36,6 +36,7 @@ import { CourseCard } from "@/components/site/CourseCard";
 import { FeaturedCourseCard } from "@/components/site/FeaturedCourseCard";
 import { courses } from "@/lib/courses";
 import heroImage from "@/assets/hero-students.webp";
+import heroImageMobile from "@/assets/hero-students-mobile.webp";
 import massoterapiaImg from "@/assets/course-massoterapia.webp";
 import cuidadorImg from "@/assets/course-cuidador.webp";
 import alumni1Img from "@/assets/alumni-clinic-1.webp";
