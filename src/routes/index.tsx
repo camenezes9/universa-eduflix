@@ -36,6 +36,7 @@ import { CourseCard } from "@/components/site/CourseCard";
 import { FeaturedCourseCard } from "@/components/site/FeaturedCourseCard";
 import { courses } from "@/lib/courses";
 import heroImage from "@/assets/hero-students.webp";
+import heroImageMobile from "@/assets/hero-students-mobile.webp";
 import massoterapiaImg from "@/assets/course-massoterapia.webp";
 import cuidadorImg from "@/assets/course-cuidador.webp";
 import alumni1Img from "@/assets/alumni-clinic-1.webp";
@@ -160,10 +161,12 @@ function Hero() {
       <div className="absolute inset-0">
         <img
           src={heroImage}
+          srcSet={`${heroImageMobile} 768w, ${heroImage} 1440w`}
+          sizes="100vw"
           alt="Estudantes em sala de aula da Universo Educa+"
           className="size-full object-cover"
-          width={1920}
-          height={1280}
+          width={1440}
+          height={960}
           fetchPriority="high"
           decoding="async"
         />
