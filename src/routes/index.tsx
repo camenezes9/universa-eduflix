@@ -164,6 +164,8 @@ function Hero() {
           className="size-full object-cover"
           width={1920}
           height={1280}
+          fetchPriority="high"
+          decoding="async"
         />
         <div className="absolute inset-0 bg-[image:var(--gradient-hero)]" />
       </div>
