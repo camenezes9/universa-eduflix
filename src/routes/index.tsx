@@ -51,11 +51,11 @@ export const Route = createFileRoute("/")({
         content:
           "Cursos profissionalizantes presenciais e EAD com até 50% de desconto. Massoterapia, Cuidador de Idosos, Libras, Inglês e mais. Matrículas abertas 2026.",
       },
-      { property: "og:title", content: "Universo Educa+ — Transforme Seu Futuro" },
+      { property: "og:title", content: "Universo Educa+ — Cursos Profissionalizantes com 50% OFF" },
       {
         property: "og:description",
         content:
-          "Cursos profissionalizantes com 50% OFF. Certificação reconhecida e turmas reduzidas.",
+          "Cursos profissionalizantes presenciais e EAD com até 50% de desconto. Massoterapia, Cuidador de Idosos, Libras, Inglês e mais. Matrículas abertas 2026.",
       },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/" },

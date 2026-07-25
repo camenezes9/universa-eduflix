@@ -11,8 +11,6 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
-import { CookieBanner } from "@/components/site/CookieBanner";
-
 
 function NotFoundComponent() {
   return (
@@ -79,14 +77,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
+      { title: "Universo Educa+ — Cursos Profissionalizantes com 50% OFF" },
+      { name: "description", content: "Cursos profissionalizantes presenciais e EAD com até 50% de desconto. Massoterapia, Cuidador de Idosos, Libras, Inglês e mais. Matrículas abertas 2026." },
       { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { property: "og:title", content: "Universo Educa+ — Cursos Profissionalizantes com 50% OFF" },
+      { property: "og:description", content: "Cursos profissionalizantes presenciais e EAD com até 50% de desconto. Massoterapia, Cuidador de Idosos, Libras, Inglês e mais. Matrículas abertas 2026." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "Universo Educa+ — Cursos Profissionalizantes com 50% OFF" },
+      { name: "twitter:description", content: "Cursos profissionalizantes presenciais e EAD com até 50% de desconto. Massoterapia, Cuidador de Idosos, Libras, Inglês e mais. Matrículas abertas 2026." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/2b4c3a49-f1b7-4501-90c0-c1b2c2dc744f/id-preview-9c346a12--b6442819-aca7-4d0a-a949-8874b19f8744.lovable.app-1784937676386.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/2b4c3a49-f1b7-4501-90c0-c1b2c2dc744f/id-preview-9c346a12--b6442819-aca7-4d0a-a949-8874b19f8744.lovable.app-1784937676386.png" },
     ],
     links: [
       {
@@ -129,8 +131,6 @@ function RootComponent() {
     <QueryClientProvider client={queryClient}>
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <Outlet />
-      <CookieBanner />
     </QueryClientProvider>
   );
 }
-
