@@ -20,7 +20,7 @@ export const Route = createFileRoute("/cursos/$slug")({
     if (!course) throw notFound();
     return { course };
   },
-  head: ({ loaderData }) => {
+  head: ({ loaderData, params }) => {
     if (!loaderData) {
       return {
         meta: [
@@ -32,6 +32,7 @@ export const Route = createFileRoute("/cursos/$slug")({
     const c = loaderData.course;
     const title = `${c.name} — ${c.modality} | Universo Educa+`;
     const desc = `${c.short} Duração: ${c.duration}. A partir de R$ ${c.price}/mês.`;
+    const url = `https://universoeduca.buffallos.online/cursos/${params.slug}`;
     return {
       meta: [
         { title },
@@ -39,9 +40,9 @@ export const Route = createFileRoute("/cursos/$slug")({
         { property: "og:title", content: title },
         { property: "og:description", content: desc },
         { property: "og:type", content: "product" },
-        { property: "og:url", content: `/cursos/${c.slug}` },
+        { property: "og:url", content: url },
       ],
-      links: [{ rel: "canonical", href: `/cursos/${c.slug}` }],
+      links: [{ rel: "canonical", href: url }],
     };
   },
   component: CourseDetail,
