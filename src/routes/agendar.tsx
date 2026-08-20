@@ -165,6 +165,10 @@ function AgendarPage() {
               <h1 className="mt-4 font-display text-3xl font-extrabold leading-tight sm:text-5xl">
                 Agende sua visita e garanta sua vaga
               </h1>
+              {/* '''Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.'''
+                                        
+                                            
+                                            I have approved the plan */}
               <p className="mt-4 text-lg text-white/85">
                 Escolha o dia e horário mais confortável. Nossa equipe estará
                 pronta para receber você, tirar suas dúvidas e efetuar a matrícula

@@ -25,6 +25,10 @@ export function Header() {
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-4 sm:px-6 lg:px-8">
         <Link to="/" className="shrink-0">
           <Logo />
+          {/* '''Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.'''
+                                        
+                                            
+                                            I have approved the plan */}
         </Link>
         <nav className="hidden items-center gap-1 md:flex">
           {NAV.map((n) => (

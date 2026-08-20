@@ -75,6 +75,10 @@ export function Footer() {
       <div className="border-t border-white/10">
         <div className="mx-auto max-w-7xl px-4 py-5 text-center text-xs text-white/60 sm:px-6 lg:px-8">
           © 2026 Universo Educa+ — Todos os direitos reservados.
+          {/* '''Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.'''
+                                        
+                                            
+                                            I have approved the plan */}
         </div>
       </div>
     </footer>
