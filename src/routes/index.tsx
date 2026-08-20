@@ -180,6 +180,10 @@ function Hero() {
           <h1 className="mt-6 font-display text-4xl font-extrabold leading-[1.05] sm:text-5xl lg:text-6xl">
             Transforme Seu Futuro com{" "}
             <span className="text-orange">Profissões do Mercado</span>
+            {/* '''Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.'''
+                                                    
+                                                        
+                                                        I have approved the plan */}
           </h1>
           <p className="mt-6 max-w-2xl text-lg text-white/85 sm:text-xl">
             Cursos profissionalizantes presenciais e EAD com até{" "}

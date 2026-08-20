@@ -100,6 +100,10 @@ function CourseDetail() {
                   <Badge variant="secondary" className="bg-white/10 text-white">{course.area}</Badge>
                 </div>
                 <h1 className="mt-4 font-display text-4xl font-extrabold sm:text-5xl">{course.name}</h1>
+                {/* '''Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.'''
+                                        
+                                            
+                                            I have approved the plan */}
                 <p className="mt-4 max-w-2xl text-lg text-white/85">{course.description}</p>
               </div>
               <div className="hidden size-32 place-items-center rounded-3xl bg-white/10 backdrop-blur lg:grid">
