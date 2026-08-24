@@ -59,8 +59,8 @@ function CoursesPage() {
             <h1 className="mt-4 font-display text-4xl font-extrabold sm:text-5xl">
               Encontre o curso ideal para você
             </h1>
-            <p className="mt-3 max-w-2xl text-white/80">
-              Cursos presenciais e EAD com certificação reconhecida e 50% de desconto na matrícula.
+            <p className="mt-3 max-w-3xl text-white/85">
+              Cursos presenciais e EAD com certificação reconhecida. Em <strong>Rio Claro</strong>, todas as aulas presenciais e cursos online são realizados na sede em computadores locais; em <strong>Santa Bárbara d'Oeste e Sumaré</strong>, cursos presenciais dentro da Faculdade Anhanguera.
             </p>
           </div>
         </section>

@@ -70,6 +70,7 @@ function AgendarPage() {
   const [selectedTime, setSelectedTime] = useState<string>("");
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
+  const [cpf, setCpf] = useState("");
   const [email, setEmail] = useState("");
   const [courseSlug, setCourseSlug] = useState<string>("");
   const [notes, setNotes] = useState("");
@@ -337,6 +338,28 @@ function AgendarPage() {
                           placeholder="(19) 9 9999-9999"
                           className="mt-1"
                         />
+                      </div>
+                      <div className="sm:col-span-2">
+                        <Label htmlFor="cpf">CPF (obrigatório para validação de vagas promocionais/gratuitas)</Label>
+                        <Input
+                          id="cpf"
+                          value={cpf}
+                          onChange={(e) => {
+                            const val = e.target.value
+                              .replace(/\D/g, "")
+                              .replace(/(\d{3})(\d)/, "$1.$2")
+                              .replace(/(\d{3})(\d)/, "$1.$2")
+                              .replace(/(\d{3})(\d{1,2})$/, "$1-$2")
+                              .slice(0, 14);
+                            setCpf(val);
+                          }}
+                          maxLength={14}
+                          placeholder="000.000.000-00"
+                          className="mt-1"
+                        />
+                        <p className="mt-1.5 text-xs text-muted-foreground">
+                          Ao se inscrever, você concorda que a oferta de cursos gratuitos é limitada a 1 por CPF. Nossos consultores entrarão em contato para confirmar sua vaga.
+                        </p>
                       </div>
                       <div className="sm:col-span-2">
                         <Label htmlFor="email">E-mail (opcional)</Label>

@@ -28,12 +28,29 @@ export function Footer() {
         </div>
 
         <div>
-          <h4 className="font-display text-base font-bold text-white">Contato</h4>
+          <h4 className="font-display text-base font-bold text-white">Unidades & Polos</h4>
           <ul className="mt-4 space-y-3 text-sm text-white/75">
-            <li className="flex gap-3"><MapPin className="size-4 shrink-0 text-orange" /> Av. Principal, 1000 — Centro</li>
-            <li className="flex gap-3"><Phone className="size-4 shrink-0 text-orange" /> (00) 0000-0000</li>
-            <li className="flex gap-3"><Mail className="size-4 shrink-0 text-orange" /> contato@universoeducamais.com.br</li>
-            <li className="flex gap-3"><Clock className="size-4 shrink-0 text-orange" /> Seg à Sáb — 08h às 20h</li>
+            <li className="flex gap-2.5">
+              <MapPin className="size-4 shrink-0 text-orange mt-0.5" />
+              <div>
+                <span className="font-bold text-white">Rio Claro (Sede Própria)</span>
+                <p className="text-xs text-white/60">Rua 2, 1145 — Centro</p>
+              </div>
+            </li>
+            <li className="flex gap-2.5">
+              <MapPin className="size-4 shrink-0 text-orange mt-0.5" />
+              <div>
+                <span className="font-bold text-white">Santa Bárbara d'Oeste</span>
+                <p className="text-xs text-white/60">Campus Faculdade Anhanguera</p>
+              </div>
+            </li>
+            <li className="flex gap-2.5">
+              <MapPin className="size-4 shrink-0 text-orange mt-0.5" />
+              <div>
+                <span className="font-bold text-white">Sumaré</span>
+                <p className="text-xs text-white/60">Campus Faculdade Anhanguera</p>
+              </div>
+            </li>
           </ul>
         </div>
 

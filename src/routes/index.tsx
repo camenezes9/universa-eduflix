@@ -20,6 +20,10 @@ import {
   Trophy,
   MapPin,
   TrendingUp,
+  AlertTriangle,
+  Gift,
+  ArrowRight,
+  GraduationCap,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -34,6 +38,7 @@ import { Footer } from "@/components/site/Footer";
 import { WhatsAppFab } from "@/components/site/WhatsAppFab";
 import { CourseCard } from "@/components/site/CourseCard";
 import { FeaturedCourseCard } from "@/components/site/FeaturedCourseCard";
+import { FreeCourseModal } from "@/components/site/FreeCourseModal";
 import { courses } from "@/lib/courses";
 import heroImage from "@/assets/hero-students.webp";
 import heroImageMobile from "@/assets/hero-students-mobile.webp";
@@ -42,12 +47,13 @@ import cuidadorImg from "@/assets/course-cuidador.webp";
 import alumni1Img from "@/assets/alumni-clinic-1.webp";
 import alumni2Img from "@/assets/alumni-clinic-2.webp";
 import alumni3Img from "@/assets/alumni-clinic-3.webp";
+import anhangueraLogo from "@/assets/logo-anhanguera.png";
 
 export const Route = createFileRoute("/")({
   head: () => {
-    const title = "Universo Educa+ — Cursos Profissionalizantes em Rio Claro";
+    const title = "Universo Educa+ — Cursos Profissionalizantes | Rio Claro, Santa Bárbara d'Oeste e Sumaré";
     const description =
-      "Cursos profissionalizantes presenciais e EAD em Rio Claro/SP com até 50% de desconto na matrícula. Massoterapia, Cuidador de Idosos, Libras, Inglês e mais. Certificação reconhecida.";
+      "Cursos profissionalizantes presenciais e EAD com até 50% de desconto. Parceria oficial com a Faculdade Anhanguera em Santa Bárbara d'Oeste e Sumaré. Certificação reconhecida.";
     const url = "https://universoeduca.buffallos.online/";
     const image = "https://universoeduca.buffallos.online/og-image.webp";
     return {
@@ -174,21 +180,24 @@ function Hero() {
       </div>
       <div className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-28 lg:px-8 lg:py-36">
         <div className="max-w-3xl text-white">
-          <Badge className="animate-float border-0 bg-orange px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-orange-foreground">
-            🎓 Matrículas abertas 2026
-          </Badge>
+          <div className="flex flex-wrap items-center gap-2.5">
+            <Badge className="animate-float border-0 bg-orange px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-orange-foreground shadow-soft">
+              🎓 Matrículas abertas 2026
+            </Badge>
+            <div className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-3.5 py-1 text-xs font-semibold text-white/95 backdrop-blur-md">
+              <span className="size-2 rounded-full bg-emerald-400 animate-pulse" />
+              <span>Cursos Presenciais no Polo <strong>Faculdade Anhanguera</strong></span>
+            </div>
+          </div>
+
           <h1 className="mt-6 font-display text-4xl font-extrabold leading-[1.05] sm:text-5xl lg:text-6xl">
             Transforme Seu Futuro com{" "}
             <span className="text-orange">Profissões do Mercado</span>
-            {/* '''Do not make any visual modifications. The phrases I write are commands to understand what I want, not to be written down. Understand their content well, then execute what is required.'''
-                                                    
-                                                        
-                                                        I have approved the plan */}
           </h1>
           <p className="mt-6 max-w-2xl text-lg text-white/85 sm:text-xl">
             Cursos profissionalizantes presenciais e EAD com até{" "}
             <strong className="text-orange">50% de desconto</strong>. Certificação
-            reconhecida.
+            reconhecida e estrutura universitária completa.
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -200,7 +209,43 @@ function Hero() {
             </Button>
           </div>
 
-          <div className="mt-10 flex flex-wrap items-center gap-6 text-sm text-white/80">
+          {/* Destaque Institucional Parceria Anhanguera na Hero */}
+          <div className="mt-8 max-w-2xl rounded-2xl border border-white/20 bg-white/10 p-3.5 sm:p-4 shadow-[0_15px_40px_-15px_rgba(0,0,0,0.5)] backdrop-blur-xl transition-all duration-300 hover:bg-white/15">
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+              <div className="flex items-center gap-3">
+                <div className="flex shrink-0 items-center justify-center rounded-xl bg-white p-2 shadow-md">
+                  <img
+                    src={anhangueraLogo}
+                    alt="Faculdade Anhanguera"
+                    className="h-7 w-auto object-contain sm:h-8"
+                  />
+                </div>
+                <div>
+                  <div className="flex items-center gap-2">
+                    <span className="text-[11px] font-extrabold uppercase tracking-wider text-orange">
+                      Parceria Oficial
+                    </span>
+                    <span className="rounded-full bg-emerald-500/20 border border-emerald-400/30 px-2 py-0.5 text-[10px] font-bold text-emerald-300">
+                      Somente Cursos Presenciais
+                    </span>
+                  </div>
+                  <p className="mt-0.5 text-xs font-bold text-white sm:text-sm">
+                    Aulas presenciais ministradas dentro dos campi da Faculdade Anhanguera
+                  </p>
+                </div>
+              </div>
+              <div className="flex flex-wrap items-center gap-1.5 border-t border-white/15 pt-2 sm:border-t-0 sm:border-l sm:border-white/20 sm:pl-3.5 sm:pt-0">
+                <span className="inline-flex items-center gap-1 rounded-lg bg-white/15 px-2.5 py-1 text-xs font-semibold text-white backdrop-blur">
+                  <MapPin className="size-3.5 text-orange shrink-0" /> S.B. d'Oeste
+                </span>
+                <span className="inline-flex items-center gap-1 rounded-lg bg-white/15 px-2.5 py-1 text-xs font-semibold text-white backdrop-blur">
+                  <MapPin className="size-3.5 text-orange shrink-0" /> Sumaré
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-8 flex flex-wrap items-center gap-6 text-sm text-white/80">
             <div className="flex items-center gap-2">
               <div className="flex -space-x-2">
                 {[1, 2, 3, 4].map((i) => (
@@ -287,6 +332,243 @@ const featuredContent: Record<
   },
 };
 
+const freeCoursePreviews = [
+  {
+    title: "Introdução à Massoterapia",
+    category: "Saúde & Bem-Estar",
+    desc: "Aprenda os princípios básicos de anatomia, toques relaxantes e entenda a rotina de um terapeuta.",
+    badge: "100% Gratuito",
+  },
+  {
+    title: "Fundamentos de Cuidador de Idosos",
+    category: "Saúde & Cuidado",
+    desc: "Visão geral sobre rotina de atendimento, humanização e mercado de trabalho para cuidadores.",
+    badge: "100% Gratuito",
+  },
+  {
+    title: "Rotinas Administrativas Essenciais",
+    category: "Administração",
+    desc: "Primeiros passos no mundo corporativo, atendimento ao público e organização de processos.",
+    badge: "100% Gratuito",
+  },
+  {
+    title: "Inclusão Digital & Informática",
+    category: "Tecnologia",
+    desc: "Fundamentos para quem quer perder o medo do computador e dominar ferramentas essenciais.",
+    badge: "100% Gratuito",
+  },
+];
+
+function FreeCoursesSection() {
+  const [modalOpen, setModalOpen] = useState(false);
+
+  return (
+    <section id="gratuitos" className="relative overflow-hidden bg-gradient-to-b from-secondary/40 via-background to-secondary/30 py-16 sm:py-24">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-3xl text-center">
+          <Badge className="border-0 bg-orange px-3.5 py-1 text-xs font-bold uppercase tracking-widest text-orange-foreground shadow-soft">
+            <Gift className="mr-1.5 size-3.5" /> Comece Sua Jornada
+          </Badge>
+          <h2 className="mt-4 font-display text-3xl font-extrabold text-navy sm:text-4xl lg:text-5xl">
+            Explore sua vocação com nossos <span className="text-orange">Cursos Gratuitos Introdutórios</span>
+          </h2>
+          <p className="mt-4 text-base text-muted-foreground sm:text-lg">
+            Oferecemos cursos básicos em diversas áreas para ajudar você a entender na prática como funciona o mercado de trabalho. É o primeiro passo ideal para quem está em dúvida!
+          </p>
+        </div>
+
+        {/* Regra de Ouro Alert Banner */}
+        <div className="mx-auto mt-8 max-w-3xl rounded-2xl border-2 border-amber-500/30 bg-amber-500/10 p-5 shadow-soft">
+          <div className="flex flex-col items-center gap-3 text-center sm:flex-row sm:text-left">
+            <div className="grid size-12 shrink-0 place-items-center rounded-xl bg-amber-500 text-white shadow-md">
+              <AlertTriangle className="size-6" />
+            </div>
+            <div>
+              <h3 className="font-display text-sm font-bold text-amber-950 dark:text-amber-200 uppercase tracking-wide">
+                Regra de Ouro e Transparência
+              </h3>
+              <p className="mt-1 text-sm font-medium text-amber-900/90 dark:text-amber-100/90">
+                ⚠️ <strong>Importante:</strong> Para garantir que mais pessoas tenham acesso a essa oportunidade, o limite é de <strong>apenas 1 (um) curso gratuito por CPF</strong>.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Course Previews */}
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {freeCoursePreviews.map((c) => (
+            <div
+              key={c.title}
+              className="card-hover flex flex-col justify-between rounded-2xl border border-border bg-card p-6 shadow-soft"
+            >
+              <div>
+                <div className="flex items-center justify-between gap-2">
+                  <span className="rounded-full bg-orange/10 px-2.5 py-0.5 text-[11px] font-bold text-orange">
+                    {c.category}
+                  </span>
+                  <Badge variant="secondary" className="bg-success/15 text-success border-0 font-bold text-[10px]">
+                    {c.badge}
+                  </Badge>
+                </div>
+                <h3 className="mt-4 font-display text-lg font-bold text-navy leading-snug">
+                  {c.title}
+                </h3>
+                <p className="mt-2 text-xs text-muted-foreground leading-relaxed">
+                  {c.desc}
+                </p>
+              </div>
+              <div className="mt-6 border-t border-border pt-4">
+                <span className="text-[11px] font-medium text-muted-foreground block mb-3">
+                  Nível Introdutório · Vagas Limitadas
+                </span>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="w-full border-orange/40 text-orange hover:bg-orange hover:text-white font-semibold text-xs"
+                  onClick={() => setModalOpen(true)}
+                >
+                  Garantir vaga gratuita
+                </Button>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* CTA Principal da Seção */}
+        <div className="mt-12 text-center">
+          <Button
+            variant="cta"
+            size="xl"
+            className="shadow-elevated text-base px-8 py-6 font-bold"
+            onClick={() => setModalOpen(true)}
+          >
+            <Gift className="size-5 mr-2" />
+            Verificar disponibilidade de cursos gratuitos
+            <ArrowRight className="size-5 ml-2" />
+          </Button>
+        </div>
+
+        <FreeCourseModal isOpen={modalOpen} onOpenChange={setModalOpen} />
+      </div>
+    </section>
+  );
+}
+
+function ComparisonSection() {
+  return (
+    <section className="border-y border-border bg-background py-16 sm:py-20">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-2xl text-center">
+          <Badge variant="secondary" className="border-navy/20 bg-navy/10 text-navy font-bold">
+            Transparência & Metodologia
+          </Badge>
+          <h2 className="mt-4 font-display text-3xl font-extrabold text-navy sm:text-4xl">
+            Como Funciona a Sua Evolução
+          </h2>
+          <p className="mt-3 text-muted-foreground">
+            Entenda a diferença clara entre cada modalidade e faça a melhor escolha para o seu momento.
+          </p>
+        </div>
+
+        <div className="mt-12 grid gap-8 md:grid-cols-2 max-w-4xl mx-auto">
+          {/* Card Gratuito */}
+          <div className="rounded-3xl border border-border bg-card p-8 shadow-soft flex flex-col justify-between">
+            <div>
+              <div className="flex items-center justify-between">
+                <span className="rounded-full bg-secondary px-3 py-1 text-xs font-bold text-muted-foreground uppercase tracking-wider">
+                  Degustação Vocacional
+                </span>
+                <span className="text-sm font-bold text-success">100% Gratuito</span>
+              </div>
+              <h3 className="mt-4 font-display text-2xl font-bold text-navy">
+                Cursos Gratuitos Introdutórios
+              </h3>
+              <p className="mt-2 text-sm text-muted-foreground">
+                Projetados para quem quer experimentar uma área antes de investir tempo e recursos.
+              </p>
+
+              <ul className="mt-6 space-y-3 text-sm text-foreground/85">
+                <li className="flex items-start gap-2.5">
+                  <CheckCircle2 className="size-4 shrink-0 text-success mt-0.5" />
+                  <span>Aulas básicas e visão geral da profissão</span>
+                </li>
+                <li className="flex items-start gap-2.5">
+                  <CheckCircle2 className="size-4 shrink-0 text-success mt-0.5" />
+                  <span>Ideal para testar afinidade e tirar dúvidas</span>
+                </li>
+                <li className="flex items-start gap-2.5">
+                  <CheckCircle2 className="size-4 shrink-0 text-success mt-0.5" />
+                  <span>Certificado de participação introdutório</span>
+                </li>
+                <li className="flex items-start gap-2.5 text-muted-foreground">
+                  <AlertTriangle className="size-4 shrink-0 text-amber-500 mt-0.5" />
+                  <span>Limite de 1 curso gratuito por CPF</span>
+                </li>
+              </ul>
+            </div>
+            <div className="mt-8 pt-6 border-t border-border">
+              <span className="block text-xs text-muted-foreground mb-3 text-center">
+                Primeiro passo para conhecer a profissão
+              </span>
+              <Button asChild variant="outline" className="w-full">
+                <a href="#gratuitos">Explorar cursos gratuitos</a>
+              </Button>
+            </div>
+          </div>
+
+          {/* Card Profissionalizante */}
+          <div className="relative rounded-3xl border-2 border-orange bg-gradient-to-b from-navy/5 via-card to-card p-8 shadow-elevated flex flex-col justify-between">
+            <div className="absolute -top-3.5 right-6 rounded-full bg-orange px-3.5 py-1 text-xs font-black uppercase tracking-wider text-orange-foreground shadow-sm">
+              Mais Recomendado
+            </div>
+            <div>
+              <div className="flex items-center justify-between">
+                <span className="rounded-full bg-orange/15 px-3 py-1 text-xs font-bold text-orange uppercase tracking-wider">
+                  Carreira & Renda
+                </span>
+                <span className="text-sm font-bold text-orange">Até 50% OFF</span>
+              </div>
+              <h3 className="mt-4 font-display text-2xl font-bold text-navy">
+                Cursos Profissionalizantes Completos
+              </h3>
+              <p className="mt-2 text-sm text-muted-foreground">
+                Formação profunda e definitiva focada em inserção imediata no mercado de trabalho e autonomia financeira.
+              </p>
+
+              <ul className="mt-6 space-y-3 text-sm text-foreground/85">
+                <li className="flex items-start gap-2.5">
+                  <CheckCircle2 className="size-4 shrink-0 text-orange mt-0.5" />
+                  <span><strong>Carga horária estendida</strong> (até 12 meses) com aulas 100% práticas</span>
+                </li>
+                <li className="flex items-start gap-2.5">
+                  <CheckCircle2 className="size-4 shrink-0 text-orange mt-0.5" />
+                  <span><strong>Certificação nacional reconhecida</strong> em todo o Brasil</span>
+                </li>
+                <li className="flex items-start gap-2.5">
+                  <CheckCircle2 className="size-4 shrink-0 text-orange mt-0.5" />
+                  <span>Treinamento com casos reais, modelos e equipamentos profissionais</span>
+                </li>
+                <li className="flex items-start gap-2.5">
+                  <CheckCircle2 className="size-4 shrink-0 text-orange mt-0.5" />
+                  <span>Foco total em <strong>empregabilidade e abertura do próprio negócio</strong></span>
+                </li>
+              </ul>
+            </div>
+            <div className="mt-8 pt-6 border-t border-border">
+              <span className="block text-xs text-muted-foreground mb-3 text-center">
+                Para quem já decidiu transformar de vez sua carreira
+              </span>
+              <Button asChild variant="cta" className="w-full font-bold">
+                <Link to="/cursos">Ver formações completas</Link>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function Presencial() {
   const featured = courses.filter((c) => featuredContent[c.slug]);
   const rest = courses.filter((c) => c.modality === "Presencial" && !featuredContent[c.slug]);
@@ -333,13 +615,13 @@ function EAD() {
   return (
     <section className="bg-secondary py-16 sm:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl text-center">
-          <Badge className="border-0 bg-navy text-navy-foreground">100% Online</Badge>
+        <div className="mx-auto max-w-3xl text-center">
+          <Badge className="border-0 bg-navy text-navy-foreground">Online & Interativo</Badge>
           <h2 className="mt-4 font-display text-3xl font-extrabold text-navy sm:text-4xl">
-            Estude Online no Seu Ritmo — Cursos EAD
+            Cursos Online com Suporte na Escola
           </h2>
-          <p className="mt-3 text-muted-foreground">
-            Certificado reconhecido, acesso 24/7 e suporte de tutores.
+          <p className="mt-3 text-muted-foreground text-base">
+            Em <strong className="text-navy">Rio Claro</strong>, os cursos online são realizados <strong>dentro da nossa unidade em computadores locais</strong> com apoio presencial de monitores, ou você pode acessar 100% online de casa no seu ritmo!
           </p>
         </div>
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -350,6 +632,153 @@ function EAD() {
         <div className="mt-12 text-center">
           <Button asChild variant="cta" size="xl">
             <Link to="/cursos">Ver todos os cursos <ChevronRight /></Link>
+          </Button>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function PartnershipSection() {
+  return (
+    <section id="unidades" className="relative overflow-hidden bg-gradient-to-b from-navy via-[#0d2242] to-[#12284b] text-white py-16 sm:py-24">
+      <div className="absolute inset-0 opacity-10 [background-image:radial-gradient(circle_at_30%_30%,white_1px,transparent_1px)] [background-size:24px_24px]" />
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        
+        {/* Cabeçalho com Badges */}
+        <div className="mx-auto max-w-3xl text-center">
+          <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-white shadow-soft backdrop-blur">
+            <ShieldCheck className="size-4 text-orange" /> Credibilidade & Infraestrutura Universitária
+          </div>
+          <h2 className="mt-4 font-display text-3xl font-extrabold sm:text-4xl lg:text-5xl">
+            Ensino de Qualidade <span className="text-orange">Perto de Você</span>
+          </h2>
+          <p className="mt-4 text-base text-white/80 sm:text-lg">
+            Nossa estrutura tradicional em Rio Claro agora conta com expansão regional de excelência: 
+            parceria oficial com a <strong>Faculdade Anhanguera</strong>, onde os <strong>cursos presenciais</strong> da Universo Educa+ são ministrados dentro do campus universitário em Santa Bárbara d'Oeste e Sumaré.
+          </p>
+        </div>
+
+        {/* Selo Central de Parceria */}
+        <div className="mx-auto mt-10 max-w-3xl rounded-3xl border border-white/20 bg-white/10 p-5 shadow-elevated backdrop-blur-xl sm:flex sm:items-center sm:justify-between">
+          <div className="flex items-center gap-4">
+            <div className="flex shrink-0 items-center justify-center rounded-2xl bg-white p-2.5 shadow-lg">
+              <img
+                src={anhangueraLogo}
+                alt="Logo Faculdade Anhanguera"
+                className="h-10 w-auto object-contain"
+              />
+            </div>
+            <div>
+              <div className="flex items-center gap-2">
+                <span className="text-xs font-extrabold uppercase tracking-wider text-orange">
+                  Parceria Educacional Oficial
+                </span>
+                <span className="rounded-full bg-emerald-500/20 border border-emerald-400/30 px-2 py-0.5 text-[10px] font-bold text-emerald-300">
+                  Somente Cursos Presenciais
+                </span>
+              </div>
+              <div className="mt-1 text-base font-bold text-white">
+                Universo Educa+ & Faculdade Anhanguera
+              </div>
+              <p className="mt-0.5 text-xs text-white/80">
+                Aulas presenciais ministradas diretamente nas salas e laboratórios da faculdade
+              </p>
+            </div>
+          </div>
+          <div className="mt-4 border-t border-white/15 pt-3 sm:mt-0 sm:border-t-0 sm:border-l sm:border-white/20 sm:pl-6 sm:pt-0 sm:text-right">
+            <span className="block text-xs font-bold text-emerald-300">✓ Certificação Reconhecida</span>
+            <span className="block text-xs text-white/70">Aulas Presenciais no Campus</span>
+          </div>
+        </div>
+
+        {/* Cards de Unidades */}
+        <div className="mt-12 grid gap-6 md:grid-cols-3">
+          {/* Rio Claro */}
+          <div className="group rounded-3xl border border-white/15 bg-white/10 p-7 backdrop-blur transition-all duration-300 hover:border-orange/60 hover:bg-white/15 hover:shadow-glow">
+            <div className="flex items-center justify-between">
+              <span className="rounded-full bg-orange px-3 py-1 text-xs font-bold text-orange-foreground uppercase tracking-wider">
+                Sede Própria
+              </span>
+              <MapPin className="size-5 text-orange" />
+            </div>
+            <h3 className="mt-5 font-display text-2xl font-bold text-white">
+              Rio Claro / SP
+            </h3>
+            <p className="mt-2 text-xs font-medium text-white/70">
+              Centro Histórico — Presencial & Sala de Informática
+            </p>
+            <p className="mt-4 text-sm text-white/85 leading-relaxed">
+              Todos os cursos na cidade de Rio Claro continuam sendo ministrados na unidade normalmente. Os cursos online também são realizados na unidade, em computadores locais com suporte de instrutores.
+            </p>
+            <div className="mt-6 border-t border-white/15 pt-4 text-xs text-white/75 flex items-center gap-2">
+              <Building2 className="size-4 text-orange" /> Rua 2, 1145 — Centro
+            </div>
+          </div>
+
+          {/* Santa Bárbara d'Oeste */}
+          <div className="group relative overflow-hidden rounded-3xl border border-orange/40 bg-white/10 p-7 backdrop-blur transition-all duration-300 hover:border-orange hover:bg-white/15 hover:shadow-glow">
+            <div className="absolute top-0 right-0 rounded-bl-xl bg-orange px-3 py-1 text-[10px] font-black uppercase tracking-wider text-orange-foreground shadow-sm">
+              Presencial na Faculdade
+            </div>
+            <div className="flex items-center justify-between">
+              <span className="rounded-full bg-blue-500/30 border border-blue-400/40 px-3 py-1 text-xs font-bold text-blue-200 uppercase tracking-wider">
+                Polo Presencial Anhanguera
+              </span>
+              <MapPin className="size-5 text-orange" />
+            </div>
+            <h3 className="mt-5 font-display text-2xl font-bold text-white">
+              Santa Bárbara d'Oeste / SP
+            </h3>
+            <div className="mt-2 flex items-center gap-2">
+              <div className="rounded bg-white px-1.5 py-0.5">
+                <img src={anhangueraLogo} alt="Anhanguera" className="h-3.5 w-auto object-contain" />
+              </div>
+              <span className="text-xs font-bold text-orange">Faculdade Anhanguera</span>
+            </div>
+            <p className="mt-4 text-sm text-white/85 leading-relaxed">
+              Os <strong>cursos presenciais</strong> são ministrados <strong>dentro da Faculdade Anhanguera</strong>, garantindo salas modernas, infraestrutura universitária e fácil acesso.
+            </p>
+            <div className="mt-6 border-t border-white/15 pt-4 text-xs text-white/75 flex items-center gap-2">
+              <GraduationCap className="size-4 text-orange" /> Campus Faculdade Anhanguera
+            </div>
+          </div>
+
+          {/* Sumaré */}
+          <div className="group relative overflow-hidden rounded-3xl border border-orange/40 bg-white/10 p-7 backdrop-blur transition-all duration-300 hover:border-orange hover:bg-white/15 hover:shadow-glow">
+            <div className="absolute top-0 right-0 rounded-bl-xl bg-orange px-3 py-1 text-[10px] font-black uppercase tracking-wider text-orange-foreground shadow-sm">
+              Presencial na Faculdade
+            </div>
+            <div className="flex items-center justify-between">
+              <span className="rounded-full bg-blue-500/30 border border-blue-400/40 px-3 py-1 text-xs font-bold text-blue-200 uppercase tracking-wider">
+                Polo Presencial Anhanguera
+              </span>
+              <MapPin className="size-5 text-orange" />
+            </div>
+            <h3 className="mt-5 font-display text-2xl font-bold text-white">
+              Sumaré / SP
+            </h3>
+            <div className="mt-2 flex items-center gap-2">
+              <div className="rounded bg-white px-1.5 py-0.5">
+                <img src={anhangueraLogo} alt="Anhanguera" className="h-3.5 w-auto object-contain" />
+              </div>
+              <span className="text-xs font-bold text-orange">Faculdade Anhanguera</span>
+            </div>
+            <p className="mt-4 text-sm text-white/85 leading-relaxed">
+              Os <strong>cursos presenciais</strong> contam com estrutura de ponta <strong>dentro da Faculdade Anhanguera</strong> em Sumaré, unindo a prática da Universo Educa+ ao prestígio universitário.
+            </p>
+            <div className="mt-6 border-t border-white/15 pt-4 text-xs text-white/75 flex items-center gap-2">
+              <GraduationCap className="size-4 text-orange" /> Campus Faculdade Anhanguera
+            </div>
+          </div>
+        </div>
+
+        {/* Chamada para Visita */}
+        <div className="mt-12 text-center">
+          <Button asChild variant="cta" size="xl" className="shadow-elevated font-bold">
+            <Link to="/agendar">
+              Agendar Visita em uma das Unidades <ChevronRight className="size-4 ml-1" />
+            </Link>
           </Button>
         </div>
       </div>
@@ -724,6 +1153,10 @@ function Steps() {
 
 const faqs = [
   {
+    q: "Qual a diferença entre os cursos gratuitos e os profissionalizantes?",
+    a: "Nossos cursos gratuitos são projetados para serem introdutórios, oferecendo uma base sólida e uma visão geral da área de atuação. É perfeito para explorar! Já nossos cursos profissionalizantes (pagos) são completos, com carga horária estendida, certificação robusta e foco total em empregabilidade. Eles são ideais para quem já decidiu investir em uma transformação de carreira definitiva.",
+  },
+  {
     q: "Quais formas de pagamento vocês aceitam?",
     a: "Aceitamos cartão de crédito (até 12x sem juros), boleto bancário, Pix e dinheiro. Consulte condições especiais com nossos consultores.",
   },
@@ -762,10 +1195,12 @@ function FAQ() {
               value={`item-${i}`}
               className="rounded-xl border border-border bg-card px-5 shadow-soft"
             >
-              <AccordionTrigger className="font-display text-base font-bold text-navy hover:no-underline">
+              <AccordionTrigger className="font-display text-base font-bold text-navy hover:no-underline text-left">
                 {f.q}
               </AccordionTrigger>
-              <AccordionContent className="text-muted-foreground">{f.a}</AccordionContent>
+              <AccordionContent className="text-muted-foreground leading-relaxed">
+                {f.a}
+              </AccordionContent>
             </AccordionItem>
           ))}
         </Accordion>
@@ -837,10 +1272,12 @@ function Home() {
       <Header />
       <main>
         <Hero />
-
         <SocialProof />
+        <FreeCoursesSection />
+        <ComparisonSection />
         <Presencial />
         <EAD />
+        <PartnershipSection />
         <Testimonials />
         <AlumniBusiness />
         <WhyUs />
